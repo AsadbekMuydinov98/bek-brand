@@ -1,0 +1,35 @@
+.item input,
+.item textarea{
+  width: 300px;
+}
+.item label{
+  display: block;
+  width: 150px;
+  display: flex;
+  justify-content: end;
+}
+.num-input{
+  width: 300px;
+}
+.select{
+  width: 300px!important;
+}
+
+@media (max-width: 600px){
+  .item textarea{
+    width: 100%;
+  }
+  .item label{
+    display: block;
+    width: 400px;
+    display: flex;
+    justify-content: start;
+  }
+  .num-input{
+    width: 100%;
+  }
+  .select{
+    width: 100%!important;
+  }
+}
+

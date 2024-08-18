@@ -1,0 +1,15 @@
+.news-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.news-logo {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+  font-size: 50px;
+}
+
+.news-date {
+  color: #888;
+}

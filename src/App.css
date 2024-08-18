@@ -1,0 +1,31 @@
+
+.App {
+  transition: background-color 0.3s ease;
+}
+
+.light {
+  background-color: #ffffff;
+  color: #2F3645;
+}
+
+.dark {
+  background-color: #2F3645;
+  color: #ffffff;
+}
+.App.light .ant-input::placeholder {
+  color: rgba(0, 0, 0, 0.25); 
+}
+
+.App.dark .ant-input::placeholder {
+  color: rgba(255, 255, 255, 0.5); 
+}
+
+.App.light .ant-select-selection-placeholder {
+  color: rgba(0, 0, 0, 0.25); 
+}
+
+.App.dark .ant-select-selection-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
