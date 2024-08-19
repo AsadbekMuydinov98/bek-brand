@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {getItem} from '../helpers/persistance-storage'
 
-const baseURL = 'http://localhost:8080/api';
+const baseURL = 'https://bek-brand-backend.vercel.app/api';
 
 const service = axios.create({
   withCredentials: true,

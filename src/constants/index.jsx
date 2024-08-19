@@ -5,7 +5,7 @@ import { SiNike, SiMikrotik  } from "react-icons/si";
 import { IoLogoFigma } from "react-icons/io5";
 import { getItem } from "../helpers/persistance-storage";
 
-export const baseUrl = "http://localhost:8080";
+export const baseUrl = "https://bek-brand-backend.vercel.app/";
 
 export const useAuth = () => {
   const user = getItem('accessToken')
