@@ -1,8 +1,0 @@
-.mobile-action{
-  display: none;
-}
-@media (max-width: 567px) {
-  .mobile-action{
-    display: block;
-  }
-}
