@@ -72,6 +72,7 @@ const Brands = () => {
     {
       title: 'Actions',
       key: 'actions',
+      width: 200,
       render: (text, record) => (
         <div>
           <Button type="link" onClick={() => handleEdit(record)}>Edit</Button>

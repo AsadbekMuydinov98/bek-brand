@@ -127,7 +127,13 @@ const ProductsList = () => {
   return (
     <div>
       <UniversalModal visible={isModalVisible} onCancel={handleCancel}>
-        <ProductForm colors={colors} categories={categories} brands={brands} formik={formikProduct} />
+        <ProductForm 
+          colors={colors} 
+          categories={categories} 
+          brands={brands} 
+          formik={formikProduct} 
+          editingProduct={editingProduct} 
+        />
       </UniversalModal>
       <Button type="primary" onClick={showModal}>Add New Product</Button>
       <UniversalTable fetchData={fetchData} columns={getColumns(editProduct, deleteProduct)} />

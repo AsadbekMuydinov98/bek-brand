@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Empty, message } from 'antd';
+import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import MobileActions from './ProductsItems/MobileActions';
 import HorizontalCard from '../../components/Cards/Horizontal';
@@ -115,8 +115,6 @@ const ProductPage = () => {
   const handleColorChange = (selectedValues) => {
     setSelectedColors(selectedValues);
   };
-
-  if(filteredProducts.length==0) return <Empty description="No items in this page" />
 
   return (
     <ProductsWrapper>

@@ -3,7 +3,7 @@ import SubmitButton from "../FormElements/SubmitButton";
 import UniversalForm from "../UniversalForm";
 const {Title} = Typography
 
-const ProductForm = ({formik, colors, categories, brands}) => {
+const ProductForm = ({formik, colors, categories, brands, editingProduct}) => {
   const fields = [
     { name: 'title', type: 'text', label: 'Title', placeholder: 'Enter Title' },
     { name: 'price', type: 'number', label: 'Price', placeholder: 'Enter Price' },
@@ -17,8 +17,8 @@ const ProductForm = ({formik, colors, categories, brands}) => {
   ];
 
   return (
-    <div className={`signup`}>
-      <Title className="form-title" id="signup">Add Product</Title>
+    <div className="product-form">
+      <Title level={3} className="form-title" id="product-form">{editingProduct === null ? 'Add Product' : "Edit product"}</Title>
       <form  onSubmit={formik.handleSubmit}>
         <div className="form-holder">
           <UniversalForm
@@ -26,7 +26,7 @@ const ProductForm = ({formik, colors, categories, brands}) => {
             formik={formik}
           />
         </div>
-        <SubmitButton title={'Add product'} />
+        <SubmitButton title={editingProduct === null ? 'Add Product' : "Edit product"} />
       </form>
     </div>
   );
