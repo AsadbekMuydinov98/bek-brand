@@ -1,0 +1,65 @@
+.visitor-statistics-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.card-header p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.card-legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.dot-last6Months {
+  background-color: #8884d8;
+}
+
+.dot-previous {
+  background-color: #82ca9d;
+}
+
+.card-values {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-values p {
+  margin: 0;
+  font-size: 0.9em;
+}

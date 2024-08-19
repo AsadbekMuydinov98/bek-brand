@@ -1,0 +1,58 @@
+export const category = [
+  {
+    id: 1,
+    field: 'Lifestyle',
+    title: 'Daily lifestyle articles',
+    all: '8.2k',
+    plus: '+472',
+  },
+  {
+    id: 2,
+    field: 'Tutorials',
+    title: 'Coding tutorials',
+    all: '8.2k',
+    plus: '+472',
+  },
+  {
+    id: 3,
+    field: 'Technology',
+    title: 'Daily technology articles',
+    all: '8.2k',
+    plus: '+472',
+  },
+  {
+    id: 4,
+    field: 'UX design',
+    title: 'UX design tips',
+    all: '8.2k',
+    plus: '+472',
+  },
+  {
+    id: 5,
+    field: 'Interaction tips',
+    title: 'Interaction articles',
+    all: '8.2k',
+    plus: '+472',
+  },
+  {
+    id: 6,
+    field: 'App development',
+    title: 'Mobile development articles',
+    all: '8.2k',
+    plus: '+472',
+  },
+  {
+    id: 7,
+    field: 'Nature',
+    title: 'Wildlife animal articles',
+    all: '8.2k',
+    plus: '+472',
+  },
+  {
+    id: 8,
+    field: 'Geography',
+    title: 'Geography articles',
+    all: '8.2k',
+    plus: '+472',
+  },
+];
