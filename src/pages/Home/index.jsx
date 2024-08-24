@@ -18,10 +18,11 @@ import Product from './HomeItems/Product';
 const HomePage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { products } = useSelector(state => state.product);
+  const { products, loading } = useSelector(state => state.product);
   const { user } = useSelector(state => state.auth);
   const { favorites } = useSelector(state => state.product); 
   const [open, setOpen] = useState(false);
+  
 
 
   useEffect(() => {
@@ -78,7 +79,8 @@ const HomePage = () => {
       />
       <Banner />
       <Product 
-        products={products} 
+        products={products}
+        isLoading={loading} 
         handleAddToCart={handleAddToCart} 
         onViewDetails={onViewDetails}
         handleAddToWishList={handleAddToWishList}  
