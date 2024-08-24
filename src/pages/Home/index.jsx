@@ -1,6 +1,6 @@
 import 'antd/dist/reset.css';
 import { features, newsItems } from '../../constants';
-// import { Banner } from '../../components';
+import { Banner } from '../../components';
 import Features from './HomeItems/Features'
 import AdsProducts from './HomeItems/AdsProducts'
 import News from './HomeItems/News';
@@ -76,7 +76,7 @@ const HomePage = () => {
         hideModal={hideModal} 
         showModal={showModal} 
       />
-      {/* <Banner /> */}
+      <Banner />
       <Product 
         products={products} 
         handleAddToCart={handleAddToCart} 
