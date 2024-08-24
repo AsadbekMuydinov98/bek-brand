@@ -25,7 +25,7 @@ export const createColumns = (handleChange, handleDelete) => [
         <img
           src={`${baseUrl}/${getImageUrl(text)}`}
           alt={text}
-          style={{ width: 100, height: 100, objectFit: 'contain' }}
+          style={{ width: 50, height: 50, objectFit: 'contain' }}
         />
       </Space>
     ),
@@ -52,12 +52,6 @@ export const createColumns = (handleChange, handleDelete) => [
         <PlusOutlined onClick={() => handleChange(record.id, record.count + 1)} />
       </Space>
     ),
-  },
-  {
-    title: "UNIT PRICE",
-    dataIndex: "price",
-    key: "unitPrice",
-    render: (text) => `$${text.toFixed(2)}`,
   },
   {
     title: "ACTIONS",
