@@ -1,11 +1,11 @@
 import 'antd/dist/reset.css';
 import { features, newsItems } from '../../constants';
-import { Banner } from '../../components';
+// import { Banner } from '../../components';
 // import Features from './HomeItems/Features'
 // import AdsProducts from './HomeItems/AdsProducts'
 // import News from './HomeItems/News';
 import { HomeWrapper } from './style';
-import { lazy, useCallback, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import NotUser from '../../components/Modal/NotUser';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, addToFavorites, fetchProducts, removeFromFavorites } from '../../redux/slice/products';
@@ -38,31 +38,29 @@ const HomePage = () => {
     setOpen(false);
   };
 
-  
-const handleAddToCart = useCallback((product) => {
-  if (user) {
-    dispatch(addToCart(product, user.id));
-    message.success('Added to cart');
-  } else {
-    showModal();
-  }
-}, [user, dispatch]);
-
-  
-const handleAddToWishList = useCallback((productId) => {
-  if (user) {
-    if (favorites.includes(productId)) {
-      dispatch(removeFromFavorites(productId, user.id));
-      message.success('Removed from favorites');
+  const handleAddToCart = (product) => {
+    if (user) {
+      dispatch(addToCart(product, user.id));
+      message.success('Added to cart');
     } else {
-      dispatch(addToFavorites(productId, user.id));
-      message.success('Added to favorites');
+      showModal();
     }
-  } else {
-    showModal();
-  }
-}, [user, favorites, dispatch]);
+  };
 
+  const handleAddToWishList = (productId) => {
+    if (user) {
+      if (favorites.includes(productId)) {
+        dispatch(removeFromFavorites(productId, user.id));
+        message.success('Removed from favorites');
+      } else {
+        dispatch(addToFavorites(productId, user.id));
+        message.success('Added to favorites');
+      }
+    } else {
+      showModal();
+    }
+    
+  };
   const goToRegister = () =>{
     navigate('/login')
   }
@@ -75,22 +73,24 @@ const handleAddToWishList = useCallback((productId) => {
   
   return (
     <HomeWrapper>
-      <NotUser 
-        goToRegister={goToRegister} 
-        open={open} 
-        hideModal={hideModal} 
-        showModal={showModal} 
-      />
-      <Banner />
-      <Product 
-        products={products} 
-        handleAddToCart={handleAddToCart} 
-        onViewDetails={onViewDetails}
-        handleAddToWishList={handleAddToWishList}  
-      />
-      <Features features={features} />
-      <News newsItems={newsItems} />
-      <AdsProducts adsproducts={products} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <NotUser 
+          goToRegister={goToRegister} 
+          open={open} 
+          hideModal={hideModal} 
+          showModal={showModal} 
+        />
+        {/* <Banner /> */}
+        <Product 
+          products={products} 
+          handleAddToCart={handleAddToCart} 
+          onViewDetails={onViewDetails}
+          handleAddToWishList={handleAddToWishList}  
+        />
+        <Features features={features} />
+        <News newsItems={newsItems} />
+        <AdsProducts adsproducts={products} />
+      </Suspense>
     </HomeWrapper>
   );
 };
