@@ -87,7 +87,7 @@ const HomePage = () => {
       />
       <Features features={features} />
       <News newsItems={newsItems} />
-      <AdsProducts adsproducts={products} />
+      <AdsProducts isLoading={loading}  adsproducts={products} />
     </HomeWrapper>
   );
 };
